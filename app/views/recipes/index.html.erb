@@ -1,10 +1,13 @@
 <h1>Recipes</h1>
 
 <% @recipes.each do |item| %>
-<div>
-    <h2><%= item.name %></h2>
-    <% button_to 'Destroy this post', method: :delete %>
-</div>
-<p><%= item.user_id %></p>
-<p><%= item.description %></p>
+<ul class="recipeList">
+    <li class="recipeItem">
+        <div>
+            <h2><%= link_to item.name, recipe_path(item) %></h2>
+            <%= button_to 'Destroy this post', { action: "destroy", id: item.id }, method: :delete %>
+        </div>
+        <p><%= item.description %></p>
+    </li>
+</ul>
 <% end %>
