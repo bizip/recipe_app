@@ -1,0 +1,14 @@
+<div>
+  <h1>Add a new foods:</h1>
+  <%= form_with model: @food, url: user_foods_path, method: :post do |form| %>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+    <%= form.label :measurement_unit, 'Measurement unity' %>
+    <%= form.number_field :measurement_unit %>
+     <%= form.label :price, 'Price' %>
+    <%= form.number_field :price %>
+     <%= form.label :quantity, 'Quantity' %>
+    <%= form.number_field :quantity %>
+    <%= form.submit 'Post' %>
+  <% end %>
+</div>
