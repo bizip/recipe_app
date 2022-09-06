@@ -1,1 +1,10 @@
 <h1>Recipes</h1>
+
+<% @recipes.each do |item| %>
+<div>
+    <h2><%= item.name %></h2>
+    <% button_to 'Destroy this post', method: :delete %>
+</div>
+<p><%= item.user_id %></p>
+<p><%= item.description %></p>
+<% end %>
