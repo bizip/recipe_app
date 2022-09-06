@@ -1,0 +1,30 @@
+<h1>New recipes</h1>
+
+<%= form_with model: @recipes, method: :post do |form| %>
+<div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+</div>
+
+<div>
+    <%= form.label :preparation_time, style: "display: block" %>
+    <%= form.text_field :preparation_time %>
+</div>
+
+<div>
+    <%= form.label :cooking_time, style: "display: block" %>
+    <%= form.text_field :cooking_time %>
+</div>
+
+<div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+</div>
+
+<div>
+    <%= form.label :public, style: "display: block" %>
+    <%= form.text_field :public %>
+</div>
+
+<%= form.submit %>
+<% end %>
