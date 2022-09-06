@@ -20,11 +20,17 @@ class FoodsController < ApplicationController
         @food = @user.foods.create(food_params)
         if @food.save
           flash[:notice] = 'New food created successfully.'
-        #   redirect_to user_post_path(@user, @post)
+          redirect_to user_food_path(@user, @food)
         else
           flash.now[:alert] = 'Food creation failed'
           render action: 'new'
         end
+      end
+
+      def destroy
+        @food = Food.find(params[:id])
+        @food.destroy
+        # redirect_to food_path(@food.user), notice: "Successfully deleted the Food"
       end
     
     private
