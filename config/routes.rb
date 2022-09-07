@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   root "users#index"
   resources :recipes
+  resources :foods
 end
