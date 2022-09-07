@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-    before_action :authorize
+  before_action :authorize
   def index
     @user = User.find(params[:user_id])
     @foods = @user.foods
