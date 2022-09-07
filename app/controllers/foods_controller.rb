@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+    before_action :authorize
   def index
     @user = User.find(params[:user_id])
     @foods = @user.foods
@@ -35,6 +36,6 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+    params.require(:food).permit(:name, :measurement_unit, :price)
   end
 end
