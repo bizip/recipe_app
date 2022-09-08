@@ -1,0 +1,19 @@
+<h1><%= @inventory.name %></h1>
+<%= link_to 'Add food', class: 'btn btn-primary'%>
+
+<div>
+    <table class= 'table'>
+        <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        <% @foods.each do |food| %>
+            <tr>
+                <td><%= food.name%></td>
+                <td><%= food.quantity%></td>
+                <td><%= button_to 'Delete', method: :delete,class: 'btn btn-danger'%></td>
+            </tr>
+        <% end %>
+    </table>
+</div>
