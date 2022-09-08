@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
+  # load_and_authorize_resource
   before_action :set_recipe, only: [:show, :delete]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
     def index
       @recipes = Recipe.all
     end
@@ -13,7 +15,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
 
-    if @recipes.save
+    if @recipe.save
         redirect_to user_recipes_path
     else
         render :new
@@ -33,6 +35,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.permit(:name, :description, :preparation_time, :cooking_time, :public)
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :public)
   end
 end

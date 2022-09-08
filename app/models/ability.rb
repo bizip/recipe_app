@@ -4,6 +4,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    # user ||= User.new
+
+      return unless user.present?
+      can :read, :Food
+      can :read, :Recipe, public: true
+      can :manage, :Recipe, user:user
+      return unless user.role == "admin"
+      can :manage, :all
+
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
