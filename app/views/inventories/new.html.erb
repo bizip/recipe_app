@@ -1,0 +1,7 @@
+<div>
+    <h2> Create a new inventory: </h2>
+    <%= form_with model: @inventory, url: inventories_path, method: :post do |form| %>
+        <%= form.text_field :name %>
+        <%= form.submit 'Add new inventory', class: 'btn btn-primary'%>
+    <% end %>
+</div>
