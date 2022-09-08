@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  # load_and_authorize_resource
+  load_and_authorize_resource
   before_action :set_recipe, only: [:show, :delete]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
     def index
@@ -24,6 +24,8 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
+    
+    redirect_to user_recipes_path
   end
 
   def show; end

@@ -1,0 +1,13 @@
+<% @recipes.each do |recipe| %>
+<% if recipe.public %>
+    <div class="publicRecipesContainer">
+        <div>
+            <h2><%= recipe.name %></h2>
+            <p>By <%= recipe.user.email %></p>
+        </div>
+        <p>Total food items:</p>
+        <p>Total price:</p>
+    </div>
+    <% end %>
+<% end %>
+<%= link_to "Go Home", users_path %>

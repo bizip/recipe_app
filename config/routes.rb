@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :recipes
   end
   resources :foods
+  resources :public_recipes, only: [:index, :show]
 end
