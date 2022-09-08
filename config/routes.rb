@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "users#index"
   resources :foods
+  resources :inventories, only: [:index, :show, :new, :create, :destroy]
 end
