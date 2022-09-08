@@ -71,4 +71,6 @@ group :development do
   # gem "spring"
 
   gem 'hirb'
+
+  gem 'cancancan'
 end
