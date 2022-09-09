@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'PublicRecipe', type: :feature do
   describe 'index page' do
     before :each do
-      @first_recipe = Recipe.create(name: 'first', preparation_time: '1 hour', cooking_time: '30 minutes', description: 'Tasty', public: true)
+      @first_recipe = Recipe.create(name: 'first', preparation_time: '1 hour', cooking_time: '30 minutes',
+                                    description: 'Tasty', public: true)
     end
 
     feature 'Testing post index page' do
