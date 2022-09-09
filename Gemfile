@@ -62,6 +62,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'capybara'
+  gem 'rspec-rails'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -71,6 +73,8 @@ group :development do
   # gem "spring"
 
   gem 'hirb'
+
+  gem 'rails-controller-testing'
 
   gem 'cancancan'
 end
