@@ -1,23 +1,28 @@
-
 <nav class="navbar navbar-light bg-light">
   <div class="container">
+    <% if user_signed_in? %>
     <a class="navbar-brand">Navbar</a>
 
-    <ul class="d-flex list-unstyled" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-           <%= link_to "Foods", foods_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "New food", new_food_path, class: "nav-link" %>
+<ul class="d-flex list-unstyled" style="--bs-scroll-height: 100px;">
+  <li class="nav-item">
+     <%= link_to "Foods", foods_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "New food", new_food_path, class: "nav-link" %>
 
-        </li>
-        <li class="nav-item">
-         <%= link_to "Inventories", user_inventories_path(current_user), class: "nav-link" %>
-        </li>
+  </li>
+  <li class="nav-item">
+   <%= link_to "Inventories", user_inventories_path(current_user), class: "nav-link" %>
+  </li>
 
-        <li class="nav-item">
-          <%= link_to "Recipes", user_recipes_path(current_user), class: "nav-link" %>
-         </li>
-      </ul>
-  </div>
+  <li class="nav-item">
+    <%= link_to "Recipes", user_recipes_path(current_user), class: "nav-link" %>
+   </li>
+
+   <li class="nav-item">
+    <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+  </li>
+</ul>
+<% end %>
+</div>
 </nav>

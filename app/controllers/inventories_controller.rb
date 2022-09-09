@@ -1,7 +1,8 @@
 class InventoriesController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!, only: %i[new create destroy]
   def index
-    @user = current_user
-    @inventories = @user.inventories
+    @inventories = Inventory.all
   end
 
   def show
