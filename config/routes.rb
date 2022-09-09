@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root "users#index"
   resources :users do
-    resources :recipes
+    resources :recipes do
+      resources :foods, only: [:create, :new]
+    end
   end
   resources :foods
   resources :public_recipes, only: [:index, :show]
