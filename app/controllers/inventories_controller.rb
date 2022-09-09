@@ -18,7 +18,6 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.create(new_inventory_params)
     @inventory.user = current_user
 
-  
     if @inventory.save
       flash[:notice] = 'Inventory created successfully!'
       redirect_to user_inventories_path
