@@ -28,7 +28,11 @@ class RecipesController < ApplicationController
     redirect_to user_recipes_path
   end
 
-  def show; end
+  def show
+    @user = current_user
+    @recipe = @user.recipes.find(params[:id])
+    @foods = @recipe.recipe_foods.includes(:food)
+  end
 
    private
 

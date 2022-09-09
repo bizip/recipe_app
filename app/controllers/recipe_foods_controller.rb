@@ -19,9 +19,9 @@ class RecipeFoodsController < ApplicationController
         food_list = params[:recipe_food][:food_list]
         food_list = food_list.drop(1)
         food_list.each do |food|
-          next unless RecipeFood.where(foods_id: food.to_i, recipe_id: params[:id]).blank?
+          next unless RecipeFood.where(food_id: food.to_i, recipe_id: params[:id]).blank?
     
-          new_recipe_food = RecipeFood.new(foods_id: food.to_i, quantity: params[:recipe_food][:quantity],
+          new_recipe_food = RecipeFood.new(food_id: food.to_i, quantity: params[:recipe_food][:quantity],
                                                  recipe_id: params[:id])
           new_recipe_food.save
         end
