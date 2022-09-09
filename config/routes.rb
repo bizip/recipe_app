@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "foods#index"
   resources :users, only: [:index] do
     resources :recipes
+    resources :inventories
   end
   resources :public_recipes, only: [:index, :show]
 
@@ -11,6 +12,5 @@ Rails.application.routes.draw do
   get 'inventory_foods/:id/new', to: 'inventory_foods#new'
   delete 'inventory_foods/:id/destroy/:food_id', to: 'inventory_foods#destroy'
   post 'inventory_foods/:id/create', to: 'inventory_foods#create'
-  resources :inventories, only: [:index, :show, :new, :create, :destroy]
   resources :foods, only:[:index,:new,:create,:destroy]
 end

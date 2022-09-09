@@ -7,14 +7,14 @@ class InventoryFoodsController < ApplicationController
   end
 
   def destroy
-    @inventory_food = InventoryFood.find_by(id: params[:food_id])
+    @inventory_food = InventoryFood.find_by(food_id: params[:food_id])
 
     if @inventory_food.destroy
       flash[:notice] = 'Inventory food deleted successfully!!'
     else
       flash[:alert] = 'Something unexpected happened, inventory could not be deleted.'
     end
-    redirect_to inventory_path(params[:id])
+    redirect_to user_inventory_path(params[:id])
   end
 
   def create
@@ -27,7 +27,7 @@ class InventoryFoodsController < ApplicationController
                                              inventory_id: params[:id])
       new_inventory_food.save
     end
-    redirect_to inventory_path(params[:id]), flash: { success: 'Inventory food has been added successfully!' }
+    redirect_to user_inventory_path(params[:id]), flash: { success: 'Inventory food has been added successfully!' }
   end
 
   def inventory_food_params

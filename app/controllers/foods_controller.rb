@@ -11,7 +11,6 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(new_food_params)
-    @food.user_id = current_user.id
     if @food.save
       redirect_to foods_path
     else
