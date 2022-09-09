@@ -45,19 +45,23 @@ In your browser, go to
 
 ## Authors
 
-*Author1*
+👤 **Bizimungu Pascal**
+
+- GitHub: [@githubhandle](https://github.com/bizip)
+- Twitter: [@twitterhandle](https://twitter.com/BizimunguPasca9)
+- LinkedIn: [LinkedIn](www.linkedin.com/in/bizimungu)
+
 👤 **Natnail G/gorgis**
 
 - GitHub: [@NatiG25](https://github.com/NatiG25)
 - Twitter: [@NatiG87702270](https://twitter.com/NatiG87702270)
 - LinkedIn: [@Natnail](https://www.linkedin.com/in/natnailgorgis/ )
 
-**Author2**
-👤 **Abiodun Raheem**
+👤 **Hammad Siddique** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-- GitHub: [@Abiodunraheem](https://github.com/Abiodunraheem)
-- Twitter: [@abiodunraheem23](https://twitter.com/abiodunraheem23)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/abiodun-raheem)
+- [GitHub](https://github.com/HammadSiddique)
+- [Twitter](https://twitter.com/hs_devv)
+- [LinkedIn](https://www.linkedin.com/in/-hammadsiddique/)
 
 ## 🤝 Contributing
 
