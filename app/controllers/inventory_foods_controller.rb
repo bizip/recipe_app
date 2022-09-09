@@ -1,6 +1,5 @@
 class InventoryFoodsController < ApplicationController
 
-
   def new
     @inventory = current_user.inventories.find(params[:id])
     @inventory_food = InventoryFood.new
