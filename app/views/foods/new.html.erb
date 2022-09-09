@@ -1,6 +1,6 @@
 <div>
   <h1>Add a new foods:</h1>
-  <%= form_with model: @food, url: user_foods_path, method: :post do |form| %>
+  <%= form_with model: @food, method: :post do |form| %>
     <%= form.label :name, 'Name' %>
     <%= form.text_field :name %>
     <%= form.label :measurement_unit, 'Measurement unity' %>

@@ -1,8 +1,8 @@
-<% @recipes.each do |recipe| %>
+<% @public_recipes.each do |recipe| %>
 <% if recipe.public %>
     <div class="publicRecipesContainer">
         <div>
-            <h2><%= recipe.name %></h2>
+            <h2><%= link_to recipe.name, user_recipe_path(recipe.user_id, recipe) %></h2>
             <p>By <%= recipe.user.email %></p>
         </div>
         <p>Total food items:</p>
