@@ -1,4 +1,4 @@
 class Food < ApplicationRecord
-    has_many :recipe_foods, dependent: :nullify
-    has_many :recipes, through: :recipe_foods
+    has_many :recipe_food, dependent: :destroy
+    has_many :inventory_food, dependent: :destroy
 end
