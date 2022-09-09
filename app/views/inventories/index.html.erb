@@ -6,9 +6,11 @@
 	<h2> Your inventories list: </h2>
 	
 	<% @inventories.each do |inventory| %>
-		<%= link_to inventory.name, user_inventory_path(inventory.user_id, inventory), class: 'inventory-heading'%>
-		<% if can? :destroy, inventory %>
-		<%= button_to 'Delete', user_inventory_path(inventory.user_id, inventory), method: :delete, class: 'btn btn-danger' %>
+		<li>
+			<%= link_to inventory.name, user_inventory_path(inventory.user_id, inventory), class: 'inventory-heading'%>
+			<% if can? :destroy, inventory %>
+			<%= button_to 'Delete', user_inventory_path(inventory.user_id, inventory), method: :delete, class: 'btn btn-danger' %>
+		</li>
 	  <% end %>
 	<% end %>
 <% end %>

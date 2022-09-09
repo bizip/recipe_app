@@ -1,6 +1,8 @@
 class InventoryFoodsController < ApplicationController
+load_and_authorize_resource
+
   def new
-    @inventory = current_user.inventories.find(params[:id])
+    @inventory = Inventory.find(params[:id])
     @inventory_food = InventoryFood.new
   end
 
