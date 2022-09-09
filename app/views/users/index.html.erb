@@ -1,1 +1,5 @@
-<div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+<% if user_signed_in? %>
+<%= button_to "log Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+<% else %>
+<%= link_to "log In", new_user_session_path, class: "btn btn-primary" %>
+<% end %>

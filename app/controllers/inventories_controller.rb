@@ -1,12 +1,11 @@
 class InventoriesController < ApplicationController
+  before_action :set_inventory, only: %i[show destroy]
+  before_action :authenticate_user!, only: %i[new create destroy]
   def index
-    @user = current_user
-    @inventories = @user.inventories
+    @inventories = Inventory.all
   end
 
   def show
-    @user = current_user
-    @inventory = @user.inventories.find(params[:id])
     @foods = @inventory.inventory_foods.includes(:food)
   end
 
@@ -15,8 +14,9 @@ class InventoriesController < ApplicationController
   end
 
   def create
-    @inventory = Inventory.create(inventory_params)
+    @inventory = Inventory.new(new_inventory_params)
     @inventory.user = current_user
+
     if @inventory.save
       flash[:notice] = 'Inventory created successfully!'
       redirect_to user_inventories_path
@@ -27,8 +27,6 @@ class InventoriesController < ApplicationController
   end
 
   def destroy
-    @inventory = Inventory.find_by(id: params[:id])
-
     if @inventory.destroy
       flash[:notice] = 'Inventory deleted successfully!'
     else
@@ -39,7 +37,11 @@ class InventoriesController < ApplicationController
 
   private
 
-  def inventory_params
+  def set_inventory
+    @inventory = Inventory.find(params[:id])
+  end
+
+  def new_inventory_params
     params.require(:inventory).permit(:name)
   end
 end
