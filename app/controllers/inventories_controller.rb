@@ -1,5 +1,5 @@
 class InventoriesController < ApplicationController
-  before_action :set_inventory, only: [:show, :destroy]
+  before_action :set_inventory, only: %i[show destroy]
   before_action :authenticate_user!, only: %i[new create destroy]
   def index
     @inventories = Inventory.all
