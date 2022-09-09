@@ -9,8 +9,10 @@
     </div>
 
     <div>
-        <p>"Public"</p>
+        <p>Public: <%= @recipe.public %></p>
+        <% if can? :manage, @recipe %>
         <%= link_to 'Add ingredient', "/recipe_foods/#{@recipe.id}/new", class: 'btn btn-primary'%>
+        <% end %>
     </div>
 </div>
 
@@ -35,6 +37,6 @@
   </table>
 </div>
 
-<%= link_to "All recipes", user_recipes_path %>
+<%= link_to "All recipes", user_recipes_path, class: "btn btn-primary" %>
 
 </section>

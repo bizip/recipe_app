@@ -12,7 +12,6 @@ class Ability
       can :read, Recipe, public: true
       can :manage, Recipe, user_id: user.id
       can :manage, Inventory, user_id: user.id
-      can :manage, InventoryFood, user_id: user.id
     end
   end
 end
