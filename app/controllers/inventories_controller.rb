@@ -21,7 +21,7 @@ class InventoriesController < ApplicationController
   
     if @inventory.save
       flash[:notice] = 'Inventory created successfully!'
-      redirect_to inventories_path
+      redirect_to user_inventories_path
     else
       flash.now[:alert] = 'Something unexpected happened, inventory could not be created.'
       render :new
@@ -35,7 +35,7 @@ class InventoriesController < ApplicationController
     else
       flash[:alert] = 'Something unexpected happened, inventory could not be deleted.'
     end
-    redirect_to inventories_path
+    redirect_to user_inventories_path
   end
 
   private
