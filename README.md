@@ -23,6 +23,7 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 ## Getting Started
 
+
 To get a local copy of the app, run the following commands in your terminal:
 - `git clone git@github.com:bizip/recipe_app.git`
 - `cd /blog-app.git`
@@ -76,3 +77,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
