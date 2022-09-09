@@ -1,5 +1,4 @@
 class InventoryFoodsController < ApplicationController
-load_and_authorize_resource
 
   def new
     @inventory = Inventory.find(params[:id])

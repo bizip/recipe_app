@@ -1,5 +1,4 @@
 class InventoriesController < ApplicationController
-  # load_and_authorize_resource
   before_action :set_inventory, only: [:show, :destroy]
   before_action :authenticate_user!, only: %i[new create destroy]
   def index
