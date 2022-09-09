@@ -13,25 +13,24 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.create(food_params)
+    @food = Food.new(new_food_params)
+    @food.user_id = current_user.id
     if @food.save
-      flash[:notice] = 'New food created successfully.'
-      redirect_to foods_path(@user, @food)
+      redirect_to foods_path
     else
-      flash.now[:alert] = 'Food creation failed'
-      render action: 'new'
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
-    redirect_to foods_path, notice: "Successfully deleted the food #{@food.name}."
+    redirect_to foods_path, notice: "#{@food.name} Food record successfully."
   end
 
   private
 
-  def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price)
+  def new_food_params
+    params.require(:food).permit(:name, :measurement_unit, :price, :user_id)
   end
 end
