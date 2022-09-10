@@ -4,6 +4,11 @@
   <% end %>
 </nav>
 
+
+<% if @public_recipes.empty? %>
+	<h2> There are no public recipes! </h2>
+	
+<% else %>
 <% @public_recipes.each do |recipe| %>
 <% if recipe.public %>
     <div class="publicRecipesContainer">
@@ -14,6 +19,7 @@
         <p>Total food items:</p>
         <p>Total price:</p>
     </div>
+      <% end %>
     <% end %>
 <% end %>
 <%= link_to "Go Home", users_path %>
