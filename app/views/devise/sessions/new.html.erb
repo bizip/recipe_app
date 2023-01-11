@@ -1,0 +1,30 @@
+<h1 class="text-center">Log in</h1>
+
+<p class="p-3 border m-2"><strong>Note: </strong>Please confirm your account after signing up, by email confirmation. Then check your terminal for a link to a new login page.</p>
+
+<section class="text-center">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+</section>
+
+<%= render "devise/shared/links" %>

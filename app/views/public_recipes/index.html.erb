@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light">
+  <% unless user_signed_in? %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+  <% end %>
+</nav>
+
+
+<% if @public_recipes.empty? %>
+	<h2> There are no public recipes! </h2>
+	
+<% else %>
+<% @public_recipes.each do |recipe| %>
+<% if recipe.public %>
+    <div class="publicRecipesContainer">
+        <div>
+            <h2><%= link_to recipe.name, user_recipe_path(recipe.user_id, recipe) %></h2>
+            <p>By <%= recipe.user.email %></p>
+        </div>
+        <p>Total food items:</p>
+        <p>Total price:</p>
+    </div>
+      <% end %>
+    <% end %>
+<% end %>
+<%= link_to "Go Home", users_path %>
