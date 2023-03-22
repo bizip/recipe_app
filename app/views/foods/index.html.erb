@@ -1,0 +1,29 @@
+<section class="ps-5 pe-5">
+<div class="bg-light d-flex flex-row-reverse">
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Food</th>
+      <th scope="col">Measurement unit</th>
+      <th scope="col">Price</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count = 0 %>
+    <% @foods.each  do |item| %>
+        <tr>
+        <th scope="row"><%= count = count + 1 %></th>
+        <td><%= item.name %></td>
+        <td><%= item.measurement_unit %></td>
+        <td><b>$ </b><%= item.price %></td>
+        </tr>
+    <% end %>
+
+    
+  </tbody>
+</table>
+</section>

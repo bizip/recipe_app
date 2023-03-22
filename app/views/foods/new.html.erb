@@ -1,0 +1,12 @@
+<div class="d-flex flex-column align-items-center">
+  <h1>Add new food</h1>
+  <%= form_with model: @food, url: foods_path,class: "d-flex flex-column", method: :post do |form| %>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name %>
+    <%= form.label :measurement_unit, 'Measurement unity' %>
+    <%= form.text_field :measurement_unit %>
+     <%= form.label :price, 'Price' %>
+    <%= form.number_field :price %><br />
+    <%= form.submit 'Add Food' %>
+  <% end %>
+</div>

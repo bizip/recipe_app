@@ -1,0 +1,16 @@
+<h1>Recipes</h1>
+
+<%= link_to "Create new Recipe", new_user_recipe_path %>
+<% @recipes.each do |recipe| %>
+<ul class="recipeList">
+    <li class="reciperecipe">
+        <div>
+            <h2><%= link_to recipe.name, user_recipe_path(recipe.user_id, recipe.id) %></h2>
+            <% if can? :manage, recipe %>
+            <%= button_to 'Destroy this post', { action: "destroy", id: recipe.id }, method: :delete, class: "btn btn-danger" %>
+            <% end %>
+        </div>
+        <p><%= recipe.description %></p>
+    </li>
+</ul>
+<% end %>
