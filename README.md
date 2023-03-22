@@ -52,7 +52,7 @@ In your browser, go to
 - Twitter: [@twitterhandle](https://twitter.com/BizimunguPasca9)
 - LinkedIn: [LinkedIn](www.linkedin.com/in/bizimungu)
 
-👤 **Natnail G/gorgis**
+👤 **Nati Gebregorgis**
 
 - GitHub: [@NatiG25](https://github.com/NatiG25)
 - Twitter: [@NatiG255](https://twitter.com/NatiG255)
